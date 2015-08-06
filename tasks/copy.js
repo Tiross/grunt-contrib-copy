@@ -42,7 +42,7 @@ module.exports = function(grunt) {
 
     this.files.forEach(function(filePair) {
       var dest = unixifyPath(filePair.dest);
-      isExpandedPair = filePair.orig.expand || false;
+      isExpandedPair = filePair.orig.expand || options.expand || false;
 
       filePair.src.forEach(function(src) {
         src = unixifyPath(src);
