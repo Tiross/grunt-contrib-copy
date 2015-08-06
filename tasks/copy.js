@@ -48,7 +48,7 @@ module.exports = function(grunt) {
         var dest = unixifyPath(filePair.dest);
 
         if (detectDestType(dest) === 'directory') {
-          dest = (isExpandedPair) ? dest : path.join(dest, src);
+          dest = path.join(dest, (isExpandedPair) ? path.basename(src) : src);
         }
 
         if (grunt.file.isDir(src)) {
